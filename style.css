@@ -1,0 +1,22 @@
+body{
+    margin: auto;
+    background: #F0F0F0;
+    text-align: center;
+}
+
+#pokemon-list-div{
+    margin: 0;
+}
+
+#pokemon-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.pokemon-card{
+    display: block;
+    width:  100%;
+    box-shadow: -2px 0px 0px rgba(0,0,0,0.1);
+    padding: 5px;
+    background: steelblue;
+}
