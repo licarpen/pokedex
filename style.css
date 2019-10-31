@@ -2,6 +2,28 @@ body{
     margin: auto;
     background: #F0F0F0;
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header h1{
+    font-size: 14vw;;
+    font-weight: bolder;
+}
+
+header h2{
+    font-size: 3vw;
+}
+
+form{
+    margin: 20px;
+}
+
+form p{
+    display: inline;
+}
+
+.filter-by-height-form input{
+    width: 30px;
 }
 
 #pokemon-list-div{
@@ -14,7 +36,6 @@ body{
 }
 
 .pokemon-card{
-    display: block;
     width:  100%;
     box-shadow: -2px 0px 0px rgba(0,0,0,0.1);
     padding: 5px;
