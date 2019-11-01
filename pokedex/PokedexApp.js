@@ -7,10 +7,11 @@ import Filter from './Filter.js';
 import PokemonList from './PokemonList.js';
 // import PokemonCard from './PokemonCard.js';
 import Pagination from './Pagination.js';
+import { getPokedex } from '../services/pokedex-api.js';
 
 class PokedexApp extends Component{
 
-    onRender(dom) {
+    async onRender(dom) {
         const header = new Header();
         dom.prepend(header.renderDOM());
 
@@ -31,8 +32,13 @@ class PokedexApp extends Component{
         filterDiv.appendChild(filter.renderDOM());
 
         const pokemonListDiv = dom.querySelector('#pokemon-list-div');
-        const pokemonList = new PokemonList();
+        const pokemonList = new PokemonList({ pokedex: [] });
         pokemonListDiv.appendChild(pokemonList.renderDOM());
+
+        const response = await getPokedex();
+        // figure out what property to call
+        const pokedex = response.results;
+        pokemonList.update({ pokedex: pokedex });
 
         const footer = dom.querySelector('#footer');
         const pagination = new Pagination();
