@@ -11,7 +11,7 @@ import { getPokedex } from '../services/pokedex-api.js';
 
 class PokedexApp extends Component{
 
-    async onRender(dom) {
+    onRender(dom) {
         const header = new Header();
         dom.prepend(header.renderDOM());
 
@@ -34,16 +34,25 @@ class PokedexApp extends Component{
         const pokemonListDiv = dom.querySelector('#pokemon-list-div');
         const pokemonList = new PokemonList({ pokedex: [] });
         pokemonListDiv.appendChild(pokemonList.renderDOM());
-
-        const response = await getPokedex();
-        // figure out what property to call
-        const pokedex = response.results;
-        pokemonList.update({ pokedex: pokedex });
-
+        
         const footer = dom.querySelector('#footer');
         const pagination = new Pagination();
         footer.appendChild(pagination.renderDOM());
 
+        async function loadPokedex(){
+            const response = await getPokedex();
+            console.log(`response for getPokedex is ${response}`);
+            console.log(response);
+            const pokedex = response.results;
+            pokemonList.update({ pokedex: pokedex });
+            // pagination.update({ totalResults: totalResults });
+        } 
+        
+        loadPokedex();
+
+        window.addEventListener('hashchange', () => {
+            loadPokedex();
+        });
     }
     
     renderHTML(){

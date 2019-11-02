@@ -7,8 +7,6 @@ class Filter extends Component{
         <p>Filter By Height: </p>
         <label for="min-height">Min: </label>
         <input name="min-height" type="number">
-        <label for="max-height">Max: </label>
-        <input name="max-height" type="number">
         <button>🔍</button>  
     </form>
         `;
