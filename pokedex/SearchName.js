@@ -12,6 +12,8 @@ class SearchName extends Component{
             const queryString = window.location.hash.slice(1);
             const searchParams = new URLSearchParams(queryString);
             searchParams.set('pokemon', formData.get('search-by-name'));
+            searchParams.delete('type');
+            searchParams.delete('height');
 
             // reset page to 1
            // searchParams.set('page', 1);
