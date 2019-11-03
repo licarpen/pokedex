@@ -11,6 +11,7 @@ class Filter extends Component{
             // get current query string (no #)
             const queryString = window.location.hash.slice(1);
             const searchParams = new URLSearchParams(queryString);
+            searchParams.set('page', 1);
             searchParams.set('height', formData.get('min-height'));
             searchParams.delete('type');
             searchParams.delete('pokemon');

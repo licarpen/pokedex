@@ -12,6 +12,7 @@ class SearchType extends Component{
             // get current query string (no #)
             const queryString = window.location.hash.slice(1);
             const searchParams = new URLSearchParams(queryString);
+            searchParams.set('page', 1);
             searchParams.set('type', formData.get('search-by-type'));
             searchParams.delete('pokemon');
             searchParams.delete('height');

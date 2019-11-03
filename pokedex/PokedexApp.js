@@ -5,7 +5,6 @@ import SearchType from './SearchType.js';
 import Sort from './Sort.js';
 import Filter from './Filter.js';
 import PokemonList from './PokemonList.js';
-// import PokemonCard from './PokemonCard.js';
 import Pagination from './Pagination.js';
 import { getPokedex } from '../services/pokedex-api.js';
 
@@ -31,21 +30,22 @@ class PokedexApp extends Component{
         const filter = new Filter();
         filterDiv.appendChild(filter.renderDOM());
 
+        const paginationDiv = dom.querySelector('#pagination-div');
+        const pagination = new Pagination({ count: 0 });
+        paginationDiv.appendChild(pagination.renderDOM());
+        
         const pokemonListDiv = dom.querySelector('#pokemon-list-div');
         const pokemonList = new PokemonList({ pokedex: [] });
         pokemonListDiv.appendChild(pokemonList.renderDOM());
         
-        const footer = dom.querySelector('#footer');
-        const pagination = new Pagination();
-        footer.appendChild(pagination.renderDOM());
+        
 
         async function loadPokedex(){
             const response = await getPokedex();
-            console.log(`response for getPokedex is ${response}`);
-            console.log(response);
             const pokedex = response.results;
+            const count = response.count;
             pokemonList.update({ pokedex: pokedex });
-            // pagination.update({ totalResults: totalResults });
+            pagination.update({ count: count });
         } 
         
         loadPokedex();
@@ -66,11 +66,11 @@ class PokedexApp extends Component{
         </div>
         <div id="filter-by-height">
         </div>
+        <div id="pagination-div"></div>
         <div id="pokemon-list-div">
         </div>
     </main>
-    <footer id="footer">
-    </footer></div>
+</div>
         `;
     }
 }
