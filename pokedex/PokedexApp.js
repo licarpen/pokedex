@@ -32,12 +32,12 @@ class PokedexApp extends Component{
 
         const paginationDiv = dom.querySelector('#pagination-div');
         const pagination = new Pagination({ count: 0 });
+        console.log(pagination.renderDOM());
         paginationDiv.appendChild(pagination.renderDOM());
         
         const pokemonListDiv = dom.querySelector('#pokemon-list-div');
         const pokemonList = new PokemonList({ pokedex: [] });
         pokemonListDiv.appendChild(pokemonList.renderDOM());
-        
         
 
         async function loadPokedex(){

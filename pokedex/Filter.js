@@ -13,7 +13,7 @@ class Filter extends Component{
             const searchParams = new URLSearchParams(queryString);
             searchParams.set('page', 1);
             searchParams.set('height', formData.get('min-height'));
-            searchParams.delete('type');
+            searchParams.delete('type_1');
             searchParams.delete('pokemon');
 
             // reset page to 1

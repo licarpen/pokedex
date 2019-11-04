@@ -13,7 +13,7 @@ class SearchName extends Component{
             const searchParams = new URLSearchParams(queryString);
             searchParams.set('page', 1);
             searchParams.set('pokemon', formData.get('search-by-name'));
-            searchParams.delete('type');
+            searchParams.delete('type_1');
             searchParams.delete('height');
 
             // reset page to 1

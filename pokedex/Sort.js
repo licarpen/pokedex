@@ -14,7 +14,7 @@ class Sort extends Component{
             searchParams.set('page', 1);
             // add sort here
             searchParams.delete('height', formData.get('min-height'));
-            searchParams.delete('type');
+            searchParams.delete('type_1');
             searchParams.delete('pokemon');
 
             // reset page to 1
