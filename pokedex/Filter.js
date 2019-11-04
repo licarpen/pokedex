@@ -15,9 +15,9 @@ class Filter extends Component{
             searchParams.set('height', formData.get('min-height'));
             searchParams.delete('type_1');
             searchParams.delete('pokemon');
+            searchParams.delete('sort');
+            form.reset();
 
-            // reset page to 1
-           // searchParams.set('page', 1);
             window.location.hash = searchParams.toString();
         });
     }

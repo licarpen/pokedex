@@ -15,9 +15,8 @@ class SearchName extends Component{
             searchParams.set('pokemon', formData.get('search-by-name'));
             searchParams.delete('type_1');
             searchParams.delete('height');
-
-            // reset page to 1
-           // searchParams.set('page', 1);
+            searchParams.delete('sort');
+            form.reset();
             window.location.hash = searchParams.toString();
         });
     }

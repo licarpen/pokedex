@@ -16,6 +16,8 @@ class SearchType extends Component{
             searchParams.set('type_1', formData.get('search-by-type'));
             searchParams.delete('pokemon');
             searchParams.delete('height');
+            searchParams.delete('sort');
+            form.reset();
 
             // reset page to 1
            // searchParams.set('page', 1);

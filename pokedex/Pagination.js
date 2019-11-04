@@ -4,19 +4,12 @@ class Pagination extends Component{
     
     onRender(dom){
         const previous = dom.querySelector('.previous');
-        console.log(previous);
         const next = dom.querySelector('.next');
-        console.log(next);
         let page = 1;
 
         if (!previous) {
-            console.log('I got inside');
             return;
         }
-
-        console.log('and then I ended up here...');
-
-
 
         function updateControls() {
             const queryString = window.location.hash.slice(1);
