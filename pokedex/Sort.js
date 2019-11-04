@@ -17,6 +17,7 @@ class Sort extends Component{
             searchParams.delete('type_1');
             searchParams.delete('pokemon');
             searchParams.delete('name');
+            form.reset();
             window.location.hash = searchParams.toString();
         });
     }
@@ -27,6 +28,8 @@ class Sort extends Component{
                 <p>Sort by: </p>
                 <select name="sort-options">
                     <option disabled selected value="">Sort By</option>
+                    <option value="pokemon">Name</option>
+                    <option value="type_1">Type</option>
                     <option value="attack">Attack</option>
                     <option value="defense">Defense</option>
                 </select>

@@ -8,13 +8,6 @@ export async function getPokedex(){
     URL = `${URL}?${queryString}`;
     const response = await fetch(URL);
     const data = await response.json();
-    // data.? 
-    /*if (!data.Response){
-        return {
-            results: [],
-            count: 0
-        };
-    }
-    */
+ 
     return data;
 }
