@@ -10,7 +10,7 @@ class HomeApp extends Component{
     
     renderHTML(){
         return `
-        <div><main><p>Home Page</p><a href="../pokedex/pokedex.html">Click to customize your POKEDEX</a></main></div>
+        <div><main><a class='customize' href="../pokedex/pokedex.html">Get Started</a></main></div>
         `;
     }
 }
