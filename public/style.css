@@ -12,6 +12,7 @@ header h1{
 
 header h2{
     font-size: 3vw;
+    margin-bottom: 50px;
 }
 
 form{
@@ -20,6 +21,10 @@ form{
 
 form p{
     display: inline;
+}
+
+.customize{
+    font-size: 40px;
 }
 
 .filter-by-height-form input{
